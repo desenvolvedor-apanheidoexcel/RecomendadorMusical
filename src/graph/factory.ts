@@ -21,5 +21,8 @@ export async function buildGraph(dbPath: string = './preferences.db') {
   };
 }
 
-export const graph = async () => buildGraph();
+export const graph = async () => {
+  const { graph: compiledGraph } = await buildGraph();
+  return compiledGraph;
+};
 export default graph;
